@@ -19,9 +19,9 @@ int main(int argc, char **argv)
     int pid = 0x0;
     int interface = INTERFACE_ANY;
     int retval = EXIT_FAILURE;
-    unsigned char latency = 0;
+    unsigned char latency = 2;  // Default latency will be 2ms
 
-    while ((i = getopt(argc, argv, "i:v:p::")) != -1) {
+    while ((i = getopt(argc, argv, "i:v:p:l:")) != -1) {
         switch (i) {
             case 'i': // 0=ANY, 1=A, 2=B, 3=C, 4=D
                 interface = strtoul(optarg, NULL, 0);
@@ -32,8 +32,15 @@ int main(int argc, char **argv)
             case 'p':
                 pid = strtoul(optarg, NULL, 0);
                 break;
+            case 'l':
+                latency = (unsigned char)strtoul(optarg, NULL, 0);
+                if (latency < 1 || latency > 255) {
+                    fprintf(stderr, "Latency must be between 1 and 255\n");
+                    exit(-1);
+                }
+                break;
             default:
-                fprintf(stderr, "usage: %s [-i interface] [-v vid] [-p pid]\n", *argv);
+                fprintf(stderr, "usage: %s [-i interface] [-v vid] [-p pid] [-l latency]\n", *argv);
                 exit(-1);
         }
     }
@@ -76,9 +83,9 @@ int main(int argc, char **argv)
         exit(-1);
     }
 
-    if (ftdi_get_latency_timer(ftdi, &latency) == 0) {
-        printf("Got latency %i\n", latency);
-        latency = 2;
+    unsigned char current_latency;
+    if (ftdi_get_latency_timer(ftdi, &current_latency) == 0) {
+        printf("Current latency: %i\n", current_latency);
         f = ftdi_set_latency_timer(ftdi, latency);
         if (f == 0) {
             printf("Set latency to %i\n", latency);

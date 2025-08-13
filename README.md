@@ -42,10 +42,11 @@ make install
 ## Usage
 
 ```bash
-adjust-ftdi-latency [-i interface] [-v vid] [-p pid]
+adjust-ftdi-latency [-i interface] [-v vid] [-p pid] [-l latency]
 ```
 
 Options:
 - `-i interface`: Select interface (0=ANY, 1=A, 2=B, 3=C, 4=D)
 - `-v vid`: Vendor ID (hex format)
 - `-p pid`: Product ID (hex format)
+- `-l latency`: Latency timer value (1-255, default: 2)
