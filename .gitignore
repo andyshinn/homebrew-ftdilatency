@@ -1,0 +1,12 @@
+# Built binaries
+adjust-ftdi-latency-timer
+adjust_latency_timer
+
+# Object files
+*.o
+
+# Debug files
+*.dSYM/
+
+# macOS
+.DS_Store
