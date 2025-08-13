@@ -2,7 +2,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -std=c99 -I/opt/homebrew/include/libftdi1
 LDFLAGS = -L/opt/homebrew/lib
 LIBS = -lftdi1
-TARGET = adjust-ftdi-latency-timer
+TARGET = adjust-ftdi-latency
 SRCDIR = src
 SOURCES = $(SRCDIR)/main.c
 PREFIX = /usr/local

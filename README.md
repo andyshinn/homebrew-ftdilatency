@@ -15,7 +15,7 @@ A tool to adjust FTDI latency timer settings. This repository contains both the 
 brew tap andyshinn/ftdilatency
 
 # Install the formula
-brew install adjust-ftdi-latency-timer
+brew install adjust-ftdi-latency
 ```
 
 ## Building from Source
@@ -42,7 +42,7 @@ make install
 ## Usage
 
 ```bash
-adjust-ftdi-latency-timer [-i interface] [-v vid] [-p pid]
+adjust-ftdi-latency [-i interface] [-v vid] [-p pid]
 ```
 
 Options:
