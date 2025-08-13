@@ -1,4 +1,4 @@
-class AdjustFtdiLatencyTimer < Formula
+class AdjustFtdiLatency < Formula
   desc "Tool to adjust FTDI latency timer settings"
   homepage "https://github.com/andyshinn/homebrew-ftdilatency"
   url "https://github.com/andyshinn/homebrew-ftdilatency/archive/refs/tags/v0.0.2.tar.gz"
