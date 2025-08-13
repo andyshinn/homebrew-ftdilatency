@@ -2,7 +2,7 @@ class AdjustFtdiLatency < Formula
   desc "Tool to adjust FTDI latency timer settings"
   homepage "https://github.com/andyshinn/homebrew-ftdilatency"
   url "https://github.com/andyshinn/homebrew-ftdilatency/archive/refs/tags/v0.0.3.tar.gz"
-  sha256 "7774490a353c02253822e2b142f3c4b4445e8609636f94f1f5916733b7686f19"
+  sha256 "43227c1bd54ba6bfd720f0230cc544e8f00a9ed0cebba5bafe536b15b4331547"
   license "GPL-2.0-only"
 
   depends_on "libusb"
